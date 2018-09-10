@@ -10,12 +10,17 @@
     </div>
 
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6" id="service">
         <h3>Services</h3>
         <div id="services">
           <%= f.fields_for :services do |service| %>
             <%= render 'service_fields', f: service %>
           <% end %>
-          
 
+          <div class="links">
+            <%= link_to_add_association 'add service', f, :services %>
+          </div>
+        </div>
+      </div>
+      <%= f.submit 'Create Stylist', class: 'btn' %>
     <% end %>
